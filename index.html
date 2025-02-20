@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIRU'S GROCERY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Buttons to Choose Section -->
+    <div class="main-buttons">
+        <button class="main-button" onclick="showSection('itemsSection')">Grocery Items</button>
+        <button class="main-button" onclick="showSection('pricesSection')">Grocery Prices</button>
+    </div>
+
+    <!-- Grocery Items Section -->
+    <div id="itemsSection" class="content-section" style="display: none;">
+        <h1>CHIRU'S GROCERY ITEMS</h1>
+        <div class="input-container">
+            <input type="text" id="imageURL" placeholder="Enter Image URL"><br><br>
+            <input type="text" id="itemName" placeholder="Enter item name">
+            <input type="number" id="itemQuantity" placeholder="Enter quantity"><br><br>
+            <button onclick="addItem()">Add Item</button>
+        </div>
+        <div id="imageContainer"></div>
+    </div>
+
+    <!-- Grocery Prices Section -->
+    <div id="pricesSection" class="content-section" style="display: none;">
+        <h1>Grocery Prices</h1>
+        <div class="price-container">
+            <input type="text" id="priceItemName" placeholder="Enter item name">
+            <input type="text" id="priceImageURL" placeholder="Enter Image URL">
+            <input type="number" id="walmartPrice" placeholder="Walmart Price">
+            <input type="number" id="smartAndFinalPrice" placeholder="Smart & Final Price">
+            <input type="number" id="targetPrice" placeholder="Target Price">
+            <button onclick="addPrice()">Add Price</button>
+        </div>
+
+        <h2>Added Items with Prices</h2>
+        <div id="priceContainer"></div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
